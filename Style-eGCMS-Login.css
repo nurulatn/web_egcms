@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&display=swap');
+/*font-family: 'IBM Plex Serif', serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+/*font-family: 'Lilita One', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+/*font-family: 'Abel', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+/*font-family: 'Homemade Apple', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&display=swap');
+/*font-family: 'Fira Sans Extra Condensed', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap');
+/*font-family: 'Comfortaa', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root {
+    --green: #27ae60;
+    --black: #192a56;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 16rem 9%;
+}
+
+section:nth-child(even) {
+    background-color: #A5D8D6;
+}
+
+.sub-heading {
+    text-align: center;
+    color: #188C88;
+    font-size: 3rem;
+    padding-top: 1rem;
+    text-transform: uppercase;
+}
+
+.heading {
+    text-align: center;
+    color: var(--black);
+    font-size: 3rem;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding: .8rem 3rem;
+
+}
+
+.btn:hover {
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+
+/* Header Section Style */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #188C88;
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    border-bottom-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+}
+
+nav .logo {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+nav .logo i {
+    color: var(--green);
+}
+
+nav a {
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding: .5rem 1.5rem;
+    color: #fff;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #fff;
+    background: #A5D8D6;
+}
+
+nav .navbar .nav-btn {
+    display: none;
+}
+
+nav .navbar #nav-check {
+    display: none;
+}
+
+nav li {
+    display: inline;
+}
+
+#nav-button {
+    display: none;
+}
+
+label {
+    display: none;
+    color: #fff;
+}
+
+
+/* Home Section Style */
+.home {
+    background-color: #D9F4F3;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 9rem;
+}
+
+.home .content {
+    flex: 1 1 45rem;
+}
+
+.home .image {
+    flex: 1 1 45rem;
+}
+
+.home .image img {
+    width: 40%;
+    margin-left: 70%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.home .content span {
+    color: var(--green);
+    font-size: 2.5rem;
+}
+
+.home .content h3 {
+    color: var(--black);
+    font-size: 7rem;
+    text-align: center;
+}
+
+.home .content p {
+    color: var(--light-color);
+    font-size: 2.2rem;
+    padding: .5rem 0;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--green);
+}
+
+.home form {
+    max-width: 50rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    border: .1rem solid rgba(0, 0, 0, .2);
+    background: #E5F9F8;
+    padding: 1.5rem;
+    margin: 0 auto;
+}
+
+.home form .inputBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.home form .inputBox .input {
+    width: 49%;
+}
+
+.home form .inputBox .input span {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.home form .inputBox .input input,
+.home form .inputBox .input textarea {
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: none;
+    margin-bottom: 1rem;
+    width: 100%;
+
+}
+
+.home form .inputBox .input input:focus,
+.home form .inputBox .input textarea:focus {
+    border: .1rem solid var(--green);
+}
+
+.home form .inputBox .input textarea {
+    height: 20rem;
+    resize: none;
+}
+
+.home form .button {
+    text-align: center;
+}
+
+.home form .button .btn {
+    background-color: #188C88;
+}
+
+.loader-container img {
+    width: 35rem;
+}
+
+.loader-container.fade-out {
+    top: -110%;
+    opacity: 0;
+}
+
+/* Footer Section Style */
+.footer .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+.footer .box-container .box h3 {
+    padding: .5rem 0;
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.footer .box-container .box a {
+    display: block;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+    color: var(--light-color);
+}
+
+.footer .box-container .box a:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.footer .credit {
+    text-align: center;
+    border-top: .1rem solid rgba(0, 0, 0, .1);
+    font-size: 2rem;
+    color: var(--black);
+    padding: .5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer .credit span {
+    color: var(--green);
+}
+
+.footer .tengah .kolom .deskripsi {
+    padding: 1rem;
+}
+
+.footer .support .logotelkom {
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 10rem;
+    justify-content: center;
+}
+
+/* Loader Section Style */
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: #D9F4F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img {
+    width: 15rem;
+}
+
+.loader-container.fade-out {
+    top: -110%;
+    opacity: 0;
+}
+
+/* media queries  */
+@media (max-width:991px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+
+}
+
+@media (max-width:768px) {
+
+    html {
+        font-size: 55%;
+    }
+
+    nav {
+        padding: 1rem 2rem;
+    }
+
+    section {
+        padding: 2rem;
+        padding-bottom: 8rem;
+        padding-top: 10%;
+    }
+}
+
+
+@media (max-width:475px) {
+
+    html {
+        font-size: 50%;
+    }
+
+    section {
+        padding: 2rem;
+        padding-bottom: 8rem;
+        padding-top: 30%;
+    }
+
+    nav {
+        align-items: center;
+        padding: 12%;
+
+    }
+
+    nav .logo {
+        width: 50%;
+        position: absolute;
+        left: 0px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 15%;
+        left: 0%;
+        width: 100%;
+        background: #188C88;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom-right-radius: 31px;
+        border-bottom-left-radius: 31px;
+    }
+
+    nav li {
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+
+    nav a {
+        width: 100%;
+        display: block;
+    }
+
+    nav li:hover {
+        background: rgba(172, 255, 214, 0.452);
+    }
+
+    label {
+        display: block;
+        padding: 0px 10px;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 2%;
+    }
+
+    label:hover {
+        color: #D9F4F3;
+    }
+
+    nav #nav-button:checked~ul {
+        max-height: 100%;
+        transition: all 1s ease-out;
+    }
+
+    nav .logo {
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: bolder;
+        padding-left: 10%;
+    }
+
+    .home {
+        background-color: #D9F4F3;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding-top: 20%;
+
+    }
+
+}

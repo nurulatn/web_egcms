@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-GCMS 4.0</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="Style-eGCMS-Login.css">
+
+
+</head>
+
+<body>
+    <!-- Loader start -->
+    <div class="loader-container">
+        <img src="Aset/PNG/loader intertwind.gif" alt="">
+    </div>
+
+    <script>
+        function loader() {
+            document.querySelector('.loader-container').classList.add('fade-out');
+        }
+
+        function fadeOut() {
+            setInterval(loader, 3000);
+        }
+
+        window.onload = fadeOut;
+    </script>
+    <!-- Loader End -->
+
+    <!-- Navbar Start -->
+    <nav>
+        <a href="" class="logo"><i class=""></i> e-GCMS 4.0</a>
+
+        <input type="checkbox" name="" id="nav-button">
+        <label for="nav-button">&#9776</label>
+
+        <ul>
+            <li><a href="e-GCMS.html">Home</a></li>
+            <li><a href="e-GCMS.html#about">About Us</a></li>
+            <li><a href="e-GCMS.html#stunting">Stunting</a></li>
+            <li><a type="button" id="login_btn">Login</a></li>
+        </ul>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- search form  -->
+
+    <form action="" id="search-form">
+        <input type="search" placeholder="search here..." name="" id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        <i class="fas fa-times" id="close"></i>
+    </form>
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+
+        <div class="content">
+            <h3>Silakan Masuk!</h3>
+            <p>Menu Login e-GCMS 4.0</p>
+
+            <form action="">
+
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Username</span>
+                        <input type="text" placeholder="Username" id="emailadmin">
+                    </div>
+
+                </div>
+
+                <div class="inputBox">
+                    <div class="input">
+                        <span>Password</span>
+                        <input type="password" placeholder="Password" id="passadmin">
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input class="btn" type="button" value="Masuk" id="sub_btn">
+                </div>
+
+                <!-- <div class="button">
+                <a href="e-GCMS_RegisAdmin.html" class="btn">Buat Akun Baru?</a>
+            </div>
+            -->
+
+            </form>
+
+        </div>
+        <script src="https://unpkg.com/@supabase/supabase-js"></script>
+        <script src="DataLogin_p.js"></script>
+
+    </section>
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Locations</h3>
+                <a href="#">Bojongsoang</a>
+                <a href="#">Dayeuhkolot</a>
+                <a href="#">Baleendah</a>
+                <a href="#">Batununggal</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#stunting">Stunting</a>
+                <a href="e-GCMS_Login.html">Login</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="https://wa.me/+6282297428705">Whatsapp</a>
+                <a href="mailto:egcmsteam@gmail.com">egcmsteam@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>Follow us</h3>
+                <a href="https://www.instagram.com/TelkomUniversity/">Instagram</a>
+            </div>
+        </div>
+
+        <div class="credit"> copyright @ 2022 by <span>team e-GCMS 4.0 Telkom University</span>
+
+            <div class="tengah">
+                <div class="kolom">
+                    <p class="deskripsi">
+                    <h2>Support by :</h2>
+                    </p>
+                </div>
+
+                <div class="support">
+                    <img src="/Aset/PNG/logo_kedaireka-removebg.png" class="logotelkom" />
+                    <img src="/Aset/PNG/Logo_Telkom.png" class="logotelkom" />
+                    <img src="/Aset/PNG/Dycodex.png" class="logotelkom" />
+                </div>
+    </section>
+
+    <!-- footer section ends -->
+
+</body>
+
+</html>

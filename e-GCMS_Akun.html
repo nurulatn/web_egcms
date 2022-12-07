@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-GCMS 4.0</title>
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="">
+
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="Style-eGCMS-Akun.css">
+
+  <!-- Boxicons CDN Link -->
+
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+</head>
+
+<body>
+
+  <!-- Loader start -->
+  <div class="loader-container">
+    <img src="Aset/PNG/loader intertwind.gif" alt="">
+  </div>
+
+  <script>
+    function loader() {
+      document.querySelector('.loader-container').classList.add('fade-out');
+    }
+
+    function fadeOut() {
+      setInterval(loader, 3000);
+    }
+
+    window.onload = fadeOut;
+  </script>
+  <!-- Loader End -->
+
+  <!-- Navbar Start
+    <nav>
+        <a href="" class="logo"><i class=""></i> e-GCMS 4.0</a>
+        
+        <input type="checkbox" name="" id="nav-button">
+        <label for="nav-button">&#9776</label>
+
+        <ul>
+            <li><a href="e-GCMS.html">Home</a></li>
+            <li><a href="e-GCMS_Lihat Data.html">Lihat Data Balita</a></li>
+            <li><a href="e-GCMS_Tambah Data.html">Tambah Data Balita</a></li>
+            <li><a href="e-GCMS_Login.html">Logout</a></li>
+        </ul>
+    </nav>
+     Navbar End -->
+
+  <!-- Sidebar Start -->
+  <div class="sidebar">
+
+    <div class="logo-details">
+      <div class="logo_name">Menu</div>
+      <i class='bx bx-menu' id="btn"></i>
+    </div>
+
+    <ul class="nav-list">
+      <li>
+        <i class='bx bx-search'></i>
+        <input type="text" placeholder="Cari...">
+        <span class="tooltip">Cari</span>
+      </li>
+
+      <li>
+        <a href="e-GCMS.html">
+          <i>
+            <iconify-icon icon="ant-design:home-filled"></iconify-icon>
+          </i>
+          <span class="links_name">Beranda</span>
+        </a>
+        <span class="tooltip">Beranda</span>
+      </li>
+
+      <li>
+        <a href="e-GCMS_Lihat Data.html">
+          <i>
+            <iconify-icon icon="fa-solid:baby"></iconify-icon>
+          </i>
+          <span class="links_name">Lihat Data Balita</span>
+        </a>
+        <span class="tooltip">Lihat Data Balita</span>
+      </li>
+
+      <li>
+        <a href="e-GCMS_Tambah Data.html">
+          <i>
+            <iconify-icon icon="fe:user-plus"></iconify-icon>
+          </i>
+          <span class="links_name">Tambah Data Balita</span>
+        </a>
+        <span class="tooltip">Tambah Data Balita</span>
+      </li>
+
+      <li>
+        <a href="e-GCMS_Akun.html">
+          <i>
+            <iconify-icon icon="mdi:user-circle"></iconify-icon>
+          </i>
+          <span class="links_name">Akun</span>
+        </a>
+        <span class="tooltip">Akun</span>
+      </li>
+
+      <li class="profile">
+        <div class="profile-details">
+          <!--<img src="profile.jpg" alt="profileImg">-->
+          <div class="name_job">
+            <div class="name">Tim e-GCMS</div>
+            <div class="job">Developer</div>
+          </div>
+        </div>
+        <a href="e-GCMS_LoginAdmin.html" type="button" class='bx bx-log-out' id="log_out"></a>
+      </li>
+
+    </ul>
+  </div>
+
+  <script>
+    let sidebar = document.querySelector(".sidebar");
+    let closeBtn = document.querySelector("#btn");
+    let searchBtn = document.querySelector(".bx-search");
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("open");
+      menuBtnChange();//calling the function(optional)
+    });
+
+    searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+      sidebar.classList.toggle("open");
+      menuBtnChange(); //calling the function(optional)
+    });
+
+    // following are the code to change sidebar button(optional)
+    function menuBtnChange() {
+      if (sidebar.classList.contains("open")) {
+        closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+      } else {
+        closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+      }
+    }
+  </script>
+  <!-- Sidebar End -->
+
+  <!-- Data Balita section starts  -->
+
+  <section class="EditBalita" id="about">
+
+    <div class="box-container">
+      <div id="infoposyandu">
+        <!--<div class="box">
+              <div class="content">
+                  <h3>Puskesmas Sukabirus</h3>
+                  <p>Jalan Sukabirus<p>
+              </div>
+            </div>-->
+      </div>
+
+
+      <div id="detailbalita">
+        <div class="content" id="detailbalita2">
+          <h3 class="heading"> Edit Data Akun </h3>
+
+          <div class="box" id="biobalita">
+            <div class="input">
+              <!---<h1 id="namabalita">Arkan</h1>
+                            <span>NIK :</span>
+                            <span>Jenis Kelamin :</span>
+                            <span>Email :</span>
+                            <span>Alamat :</span>--->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="content">
+      <form action="">
+
+        <div class="inputBox">
+          <div class="input">
+            <span>Username</span>
+            <input type="text" placeholder="Username" id="emailadmin">
+          </div>
+
+        </div>
+
+        <div class="inputBox">
+          <div class="input">
+            <span>Password</span>
+            <input type="password" placeholder="Password" id="passadmin">
+          </div>
+        </div>
+
+        <div class="button">
+          <input class="btn" type="button" value="Ubah Data" id="sub_btn">
+        </div>
+
+        <!-- <div class="button">
+          <a href="e-GCMS_RegisAdmin.html" class="btn">Buat Akun Baru?</a>
+      </div>
+      -->
+
+      </form>
+
+    </div>
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <script src="DataLogin.js"></script>
+
+  </section>
+
+  <script type="module">
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    var x = urlParams.get('id')
+
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBm4NyQ9xP9bb9ZWP8P4oNZvE93PfDW_sE",
+      authDomain: "projek-percobaan-32267.firebaseapp.com",
+      databaseURL: "https://projek-percobaan-32267-default-rtdb.firebaseio.com",
+      projectId: "projek-percobaan-32267",
+      storageBucket: "projek-percobaan-32267.appspot.com",
+      messagingSenderId: "864456396862",
+      appId: "1:864456396862:web:c18acdf50d1287e5e8c16f"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    import { getDatabase, set, ref, update, remove } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
+
+
+    const databasee = getDatabase(app);
+
+    function insert_data() {
+      set(ref(databasee, "feedback_button/" + x), {
+        balita_id: x
+      })
+        .then(() => {
+          confirm.log("update id: " + x)
+          //alert("data stored successfully");
+        })
+        .catch((error) => {
+          console.log(error)
+          //alert("ERROR"+error);
+        });
+    }
+
+    //update_usia_balita.addEventListener('click', insert_data);
+    //console.log("ini dijalankan")
+
+  </script>
+
+  <!-- Js Tab -->
+  <script>
+    function clickHandle(evt, animalName) {
+      let i, tabcontent, tablinks;
+
+      // This is to clear the previous clicked content.
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Set the tab to be "active".
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Display the clicked tab and set it to active.
+      document.getElementById(animalName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+  <!-- Js Tab -->
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>
+  <script src="EditData.js"></script>
+  <!-- Data Balita section ends -->
+
+  <!-- footer section starts  -->
+
+  <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3>Lokasi</h3>
+        <a href="#">Bojongsoang</a>
+        <a href="#">Dayeuhkolot</a>
+        <a href="#">Baleendah</a>
+        <a href="#">Batununggal</a>
+      </div>
+
+      <div class="box">
+        <h3>Tautan</h3>
+        <a href="e-GCMS.html">Beranda</a>
+        <a href="e-GCMS.html">Tentang Kami</a>
+        <a href="e-GCMS.html">Panduan Stunting</a>
+        <a href="e-GCMS_Login.html">Masuk</a>
+      </div>
+
+      <div class="box">
+        <h3>Info Kontak</h3>
+        <a href="https://wa.me/+6282297428705">Whatsapp</a>
+        <a href="mailto:egcmsteam@gmail.com">egcmsteam@gmail.com</a>
+      </div>
+
+      <div class="box">
+        <h3>Ikuti Kami</h3>
+        <a href="https://www.instagram.com/TelkomUniversity/">Instagram</a>
+      </div>
+    </div>
+
+    <div class="credit"> copyright @ 2022 by <span>team e-GCMS 4.0 Telkom University</span>
+
+      <div class="tengah">
+        <div class="kolom">
+          <p class="deskripsi">
+          <h2>Didukung oleh :</h2>
+          </p>
+        </div>
+
+        <div class="support">
+          <img src="/Aset/PNG/logo_kedaireka-removebg.png" class="logotelkom" />
+          <img src="/Aset/PNG/Logo_Telkom.png" class="logotelkom" />
+          <img src="/Aset/PNG/Dycodex.png" class="logotelkom" />
+        </div>
+  </section>
+
+  <!-- footer section ends -->
+
+</body>
+
+</html>

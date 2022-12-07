@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-GCMS 4.0</title>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="Style-eGCMS-TambahData.css">
+
+    <!-- Boxicons CDN Link -->
+
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+
+
+</head>
+
+<body>
+    <!-- Loader start -->
+    <div class="loader-container">
+        <img src="Aset/PNG/loader intertwind.gif" alt="">
+    </div>
+
+    <script>
+        function loader() {
+            document.querySelector('.loader-container').classList.add('fade-out');
+        }
+
+        function fadeOut() {
+            setInterval(loader, 3000);
+        }
+
+        window.onload = fadeOut;
+    </script>
+    <!-- Loader End -->
+
+    <!-- Navbar Start
+    <nav>
+        <a href="" class="logo"><i class=""></i> e-GCMS 4.0</a>
+        
+        <input type="checkbox" name="" id="nav-button">
+        <label for="nav-button">&#9776</label>
+
+        <ul>
+            <li><a href="e-GCMS.html">Home</a></li>
+            <li><a href="e-GCMS_Lihat Data.html">Lihat Data Balita</a></li>
+            <li><a href="e-GCMS_Tambah Data.html">Tambah Data Balita</a></li>
+            <li><a href="e-GCMS_Login.html">Logout</a></li>
+        </ul>
+    </nav>
+    Navbar End -->
+
+
+    <!-- Sidebar Start -->
+    <div class="sidebar">
+        <div class="logo-details">
+
+            <div class="logo_name">Menu</div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav-list">
+            <li>
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="Search...">
+                <span class="tooltip">Search</span>
+            </li>
+            <li>
+                <a href="e-GCMS.html">
+                    <i>
+                        <iconify-icon icon="ant-design:home-filled"></iconify-icon>
+                    </i>
+                    <span class="links_name">Home</span>
+                </a>
+                <span class="tooltip">Home</span>
+            </li>
+            <li>
+                <a href="e-GCMS_Lihat Data.html">
+                    <i>
+                        <iconify-icon icon="fa-solid:baby"></iconify-icon>
+                    </i>
+                    <span class="links_name">Lihat Data Balita</span>
+                </a>
+                <span class="tooltip">Lihat Data Balita</span>
+            </li>
+
+            <li>
+                <a href="e-GCMS_Tambah Data.html">
+                    <i>
+                        <iconify-icon icon="fe:user-plus"></iconify-icon>
+                    </i>
+                    <span class="links_name">Tambah Data Balita</span>
+                </a>
+                <span class="tooltip">Tambah Data Balita</span>
+            </li>
+
+            <li>
+                <a href="e-GCMS_Akun.html">
+                    <i>
+                        <iconify-icon icon="mdi:user-circle"></iconify-icon>
+                    </i>
+                    <span class="links_name">Akun</span>
+                </a>
+                <span class="tooltip">Akun</span>
+            </li>
+
+            <li class="profile">
+                <div class="profile-details">
+                    <!--<img src="profile.jpg" alt="profileImg">-->
+                    <div class="name_job">
+                        <div class="name">Tim e-GCMS</div>
+                        <div class="job">Developer</div>
+                    </div>
+                </div>
+                <a href="e-GCMS_LoginAdmin.html" type="button" class='bx bx-log-out' id="log_out"></a>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector("#btn");
+        let searchBtn = document.querySelector(".bx-search");
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            menuBtnChange();//calling the function(optional)
+        });
+
+        searchBtn.addEventListener("click", () => { // Sidebar open when you click on the search iocn
+            sidebar.classList.toggle("open");
+            menuBtnChange(); //calling the function(optional)
+        });
+
+        // following are the code to change sidebar button(optional)
+        function menuBtnChange() {
+            if (sidebar.classList.contains("open")) {
+                closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+            } else {
+                closeBtn.classList.replace("bx-menu-alt-right", "bx-menu");//replacing the iocns class
+            }
+        }
+    </script>
+    <!-- Sidebar End -->
+
+    <!-- Tambah Data section starts  -->
+    <section class="TambahData" id="about">
+
+        <div class="row">
+
+            <div class="box-container">
+                <div class="content">
+
+                    <h3 class="heading"> Tambah Data Balita </h3>
+
+                    <form action="" id="regis-balita">
+                        <div class="box">
+                            <div class="input">
+                                <span>Nama Lengkap</span>
+                                <input type="text" placeholder="Nama Lengkap" id="nama_balita" name="nama_balita"
+                                    required />
+                            </div>
+
+                            <div class="input">
+                                <span>Tanggal Lahir</span>
+                                <input type="date" placeholder="" id="tanggal_lahir" name="tanggal_lahir" required />
+                            </div>
+
+                            <div class="input">
+                                <span>NIK</span>
+                                <input type="text" placeholder="NIK" id="nomor_nik" name="nomor_nik" required />
+                            </div>
+
+                            <div class="input">
+                                <span>Nomor KK</span>
+                                <input type="text" placeholder="Nomor KK" id="KK" name="KK" required />
+                            </div>
+
+                            <!---<div class="input">
+                                <span>Nomor Telepon Orang Tua/Wali</span>
+                                <input type="text" placeholder="Nomor" id="nomor_ortu" name="nomor_ortu" required />
+                            </div>--->
+
+                            <!---<div class="input">
+                                <span>ID Posyandu</span>
+                                <input type="text" placeholder="ID Posyandu" id="admin_id" name="admin_id" required />
+                            </div>-->
+
+                            <div class="input" id="pilih_gender">
+                                <label for="Gender">Jenis Kelamin:</label>
+                                <input type="radio" id="pa" name="gender" value="L">
+                                <label for="male">Laki-Laki</label>
+                                <input type="radio" id="pi" name="gender" value="P">
+                                <label for="male">Perempuan</label>
+                            </div>
+
+                        </div>
+                        <div class="button">
+                            <button class="btn" type="submit" id="sub_btn">Simpan</button>
+                        </div>
+                        <!---<a href="#popup" class="btn">Simpan</a>--->
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="popup" id="popup">
+            <div class="popup_header">
+                <h1> Data Berhasil Tersimpan !</h1>
+                <a href="#TambahData" class="popup_close">&times;</a>
+                <a href="e-GCMS_Lihat Data.html" class="btn">Kembali</a>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+    <script src="https://unpkg.com/@supabase/supabase-js"></script>
+    <script src="TambahBalita_p.js"></script>
+
+    <!---<script src="TambahBalita.js"></script>--->
+    <script>
+        /*const { createClient } = supabase
+        supabase = createClient("https://ycukwhswwfyarvjkmjky.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljdWt3aHN3d2Z5YXJ2amttamt5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQ4NjQyMzksImV4cCI6MTk4MDQ0MDIzOX0.804hR33Tk2zVRtoqCjHHO-jTAeLWBEd95BlaAyV4kbU")
+
+        var cookies = document.cookie
+            .split(';')
+            .map(cookie => cookie.split('='))
+            .reduce((accumulator, [key, value]) =>
+                ({ ...accumulator, [key.trim()]: decodeURIComponent(value) }),
+                {});
+
+        console.log(cookies.id)
+
+        async function DataAdmin2() {
+            let { data: admin, error } = await supabase
+                .from('admin')
+                .select()
+
+            console.log(error)
+            //console.log(Admin)
+            banner(admin)
+        }
+        DataAdmin2()
+
+        const form = document.querySelector("#regis-balita")
+        form.addEventListener('submit', async (event) => {
+            event.preventDefault()
+
+            const formInputs = form.querySelectorAll('input[name=gender]:checked, input[name=admin_id], input[name=nama_balita], input[name=tanggal_lahir], input[name=nomor_nik], input[name=alamat_rumah], input[name=nomor_ortu]')
+
+            let submision = {}
+            formInputs.forEach(element => {
+                const { value, name } = element
+                if (value) {
+                    submision[name] = value
+                }
+            })
+
+            const { error, data } = await supabase.from('balita').insert([submision])
+
+            submision.admin = [];
+            submision.admin.push({ admin_id: cookies.id });
+            submision.admin.push(submision)
+            if (error) {
+                alert('Penyimpanan gagal!')
+            } else {
+                alert('Data berhasil disimpan.')
+                berhasil(submision);
+                window.location.assign("e-GCMS_Lihat Data.html");
+            }
+
+            formInputs.forEach(element => element.value = '')
+
+        })
+
+        function berhasil(data) {
+            var berhasil = document.getElementById("popup");
+            berhasil.innerHTML = `
+                <div class="popup_header">
+                    <h1> Data Berhasil Tersimpan !</h1>
+                    <a href="#TambahData" class="popup_close">&times;</a>
+                    <a href="e-GCMS_Lihat Data.html" class="btn">Kembali</a>
+                </div>`
+            console.log(data)
+        }
+
+        function banner(data) {
+
+        }*/
+
+    </script>
+
+    <!-- Lihat Data section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+
+        <div class="box-container">
+
+            <div class="box">
+                <h3>Locations</h3>
+                <a href="#">Bojongsoang</a>
+                <a href="#">Dayeuhkolot</a>
+                <a href="#">Baleendah</a>
+                <a href="#">Batununggal</a>
+            </div>
+
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#stunting">Stunting</a>
+                <a href="e-GCMS_Login.html">Login</a>
+            </div>
+
+            <div class="box">
+                <h3>Contact info</h3>
+                <a href="https://wa.me/+6282297428705">Whatsapp</a>
+                <a href="mailto:egcmsteam@gmail.com">egcmsteam@gmail.com</a>
+            </div>
+
+            <div class="box">
+                <h3>Follow us</h3>
+                <a href="https://www.instagram.com/TelkomUniversity/">Instagram</a>
+            </div>
+        </div>
+
+        <div class="credit"> copyright @ 2022 by <span>team e-GCMS 4.0 Telkom University</span>
+
+            <div class="tengah">
+                <div class="kolom">
+                    <p class="deskripsi">
+                    <h2>Support by :</h2>
+                    </p>
+                </div>
+
+                <div class="support">
+                    <img src="/Aset/PNG/logo_kedaireka-removebg.png" class="logotelkom" />
+                    <img src="/Aset/PNG/Logo_Telkom.png" class="logotelkom" />
+                    <img src="/Aset/PNG/Dycodex.png" class="logotelkom" />
+                </div>
+    </section>
+
+</body>
+
+</html>
+
+<!-- footer section ends -->

@@ -1,0 +1,1132 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;700&display=swap'); /*font-family: 'IBM Plex Serif', serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap'); /*font-family: 'Lilita One', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap'); /*font-family: 'Abel', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap'); /*font-family: 'Homemade Apple', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@400;700&display=swap');/*font-family: 'Fira Sans Extra Condensed', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500;700&display=swap'); /*font-family: 'Comfortaa', cursive;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --green:#27ae60;
+    --black:#192a56;
+    --light-color:#666;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none; border:none;
+    text-transform: none;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+section{
+    padding:12rem 9%;
+    /*background-color: #D9F4F3;*/
+}
+
+/*section:nth-child(even){
+    background: #A5D8D6;
+}*/
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    color:#fff;
+    background: var(--black);
+    border-radius: .5rem;
+    cursor: pointer;
+    padding:.8rem 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover{
+    background: var(--green);
+    letter-spacing: .1rem;
+}
+
+
+/* Header Section Style */
+nav{
+    position: fixed;
+    top:0; left: 0; right:0;
+    background: #188C88;
+    padding:1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+    border-bottom-right-radius: 31px;
+    border-bottom-left-radius: 31px;
+}
+
+nav .logo{
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: bolder;
+}
+
+nav .logo i{
+    color:var(--green);
+}
+
+nav a{
+    font-size: 1.7rem;
+    border-radius: .5rem;
+    padding:.5rem 1.5rem;
+    color:#fff;
+}
+
+nav ul li a.active,
+nav ul li a:hover{
+    color:#fff;
+    background: #A5D8D6;
+}
+
+nav .navbar .nav-btn{
+    display: none;
+}
+
+nav .navbar #nav-check{
+    display: none;
+}
+
+nav li {
+    display: inline;
+}
+
+#nav-button {
+    display: none;
+}
+
+label {
+    display: none;
+    color: #fff;  
+}
+
+/*Sidebar Start*/
+.sidebar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 78px;
+    background: #188C88;
+    padding: 6px 14px;
+    z-index: 99;
+    transition: all 0.5s ease;
+    
+  }
+  .sidebar.open{
+    width: 250px;
+  }
+  .sidebar .logo-details{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-top: 15%;
+    
+  }
+  .sidebar .logo-details .icon{
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  .sidebar .logo-details .logo_name{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    opacity: 0;
+    transition: all 0.5s ease;
+    margin-top: 15%;
+    margin-left: 35%;
+  }
+  .sidebar.open .logo-details .icon,
+  .sidebar.open .logo-details .logo_name{
+    opacity: 1;
+  }
+  .sidebar .logo-details #btn{
+    position: absolute;
+    top: 80%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    transition: all 0.4s ease;
+    font-size: 23px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+  }
+  .sidebar.open .logo-details #btn{
+    text-align: right;
+  }
+  .sidebar i{ /* Logo */
+    color: #192a56;
+    height: 60px;
+    min-width: 50px;
+    font-size: 28px;
+    text-align: center;
+    line-height: 60px;
+  }
+  
+  .sidebar .nav-list{
+    margin-top: 20px;
+    height: 100%;
+  }
+  .sidebar li{
+    position: relative;
+    margin: 8px 0;
+    list-style: none;
+  }
+  .sidebar li .tooltip{
+    position: absolute;
+    top: -20px;
+    left: calc(100% + 15px);
+    z-index: 3;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0;
+    white-space: nowrap;
+    pointer-events: none;
+    transition: 0s;
+  }
+  .sidebar li:hover .tooltip{
+    opacity: 1;
+    pointer-events: auto;
+    transition: all 0.4s ease;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .sidebar.open li .tooltip{
+    display: none;
+  }
+  .sidebar input{ /* Kolom search */
+    font-size: 15px;
+    color: #192a56;
+    font-weight: 400;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    width: 50px;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.5s ease;
+    background: #E4F8F7;
+  }
+  .sidebar.open input{
+    padding: 0 20px 0 50px;
+    width: 100%;
+  }
+  .sidebar .bx-search{ /* Logo Search */
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 22px;
+    background: #E4F8F7;
+    color: #192a56;
+  }
+  .sidebar.open .bx-search:hover{
+    background: var(--green);
+    color: #FFF;
+  }
+  .sidebar .bx-search:hover{
+    background: var(--green);
+    color: #11101d;
+  }
+  .sidebar li a{ /* Logo */
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    background: #E4F8F7;
+  }
+  .sidebar li a:hover{
+    background: var(--green);
+  }
+
+  .sidebar li a .links_name{
+    color: #192a56;
+    font-size: 15px;
+    font-weight: 400;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.4s;
+  }
+  .sidebar.open li a .links_name{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .sidebar li a:hover .links_name,
+  .sidebar li a:hover i{
+    transition: all 0.5s ease;
+    color: #11101D;
+  }
+  .sidebar li i{
+    height: 50px;
+    line-height: 50px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+  .sidebar li.profile{
+    position: fixed;
+    height: 60px;
+    width: 78px;
+    left: 0;
+    bottom: -8px;
+    padding: 10px 14px;
+    background: #1d1b31;
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+  .sidebar.open li.profile{
+    width: 250px;
+  }
+  .sidebar li .profile-details{
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+  .sidebar li img{
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 10px;
+  }
+  .sidebar li.profile .name,
+  .sidebar li.profile .job{
+    font-size: 15px;
+    font-weight: 400;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .sidebar li.profile .job{
+    font-size: 12px;
+  }
+  .sidebar .profile #log_out{
+    position: absolute;
+    top: 50%;
+    right: 1;
+    transform: translateY(-50%);
+    background: #1d1b31;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 0px;
+    transition: all 0.5s ease;
+    font-size: 26px;
+    color: #FFF;
+  }
+  
+  .sidebar.open .profile #log_out{
+    width: 20px;
+    right: 0;
+    background: none;
+    color: #fff;
+    height: 20px;
+    min-width: 50px;
+    font-size: 26px;
+    text-align: center;
+    line-height: 60px;
+  }
+  .home-section{
+    position: relative;
+    background: #E4E9F7;
+    min-height: 100vh;
+    top: 0;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+    z-index: 2;
+  }
+  .sidebar.open ~ .home-section{
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  .home-section .text{
+    display: inline-block;
+    color: #11101d;
+    font-size: 25px;
+    font-weight: 500;
+    margin: 18px
+  }
+  @media (max-width: 420px) {
+    .sidebar li .tooltip{
+      display: none;
+    }
+  }
+
+
+
+/* Tambah Data Section Style */
+.DataBalita{
+    background-color: #A5D8D6;
+}
+
+.DataBalita .box-container{
+    display: block;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.DataBalita .box-container .box{
+    background: #D9F4F3;
+    border:.1rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    width: 50%;
+    margin-left: 25%;
+}
+
+.DataBalita .box-container .box .image{
+    height: 25rem;
+    width: 100%;
+    padding:1.5rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.DataBalita .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+.DataBalita .box-container .box .content{
+    padding:2rem;
+    padding-top: 0;
+}
+
+
+.DataBalita .box-container .box .content h3{
+    color:var(--black);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.DataBalita .box-container .box .content p{
+    color:var(--light-color);
+    font-size: 1.6rem;
+    padding:.5rem 0;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.DataBalita .box-container .box .content .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    background: #6d4949;
+    border:10rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);    
+}
+
+.DataBalita .box-container .content span{
+    color: #192a56;
+    font-size: 1.5rem;
+}
+
+.DataBalita .box-container .content .btn1 {
+    background-color: #FF9999;
+    color: #710909;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding:.8rem 3rem;
+    align-items: center;
+    justify-content: center;
+
+} 
+
+ .DataBalita .box-container .content .btn2 {
+    background-color: #99FFC2;
+    color: #07632B;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding:.8rem 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.DataBalita .box-container .content .btn3 {
+    background-color: #C7EEFF;
+    color: #04374C;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    padding:.8rem 3rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.DataBalita .box-container .content h3{
+    text-align: center;
+    color:var(--black);
+    font-size: 5rem;
+    padding-top: 1rem;
+}
+
+
+.DataBalita .box-container .content .box span{
+    margin: 1%;
+}
+
+.DataBalita .box-container .content .box h1{
+    text-align: start;
+    color: #000000;
+    font-size: 3rem;
+    padding-top: 1rem;
+}
+
+.DataBalita .box-container .content .box1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+    background: #D9F4F3;
+    border:0.1 rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+    
+}
+
+.DataBalita .box-container .box1 .input span{
+    display: flex;
+    flex-direction: column;
+    padding:.5rem 0;
+    font-size: 1.5rem;
+    color:var(--light-color);
+    text-align: start;
+}
+
+.DataBalita .box .input {
+    width:40%;
+}
+
+.DataBalita .box-container #detailbalita .box{
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    background: #D9F4F3;
+    border:0.1 rem solid rgba(0,0,0,.2);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    padding: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+
+
+.DataBalita .popup {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -10%;
+    visibility: hidden;
+}
+
+.DataBalita .popup .popup_header{
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.DataBalita .popup .popup_header h1{
+    margin-top: 1.5rem;
+    padding: 3rem;
+    font-size: 3.5rem;
+}
+
+.DataBalita .popup .popup_header .popup_close:link,
+.DataBalita .popup .popup_header .popup_close:visited{
+    position: absolute;
+    top: 14px; left: 95%;
+    text-decoration: none;
+    color: #000000;
+    font-size: 30px;
+    display: inline-block;
+    line-height: 1;
+    transition: all .3s;
+    background-color: transparent;
+}
+
+.DataBalita .popup .popup_header .popup_close:hover,
+.DataBalita .popup_header .popup_close:active{
+    background-color: transparent;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 30px;
+    display: inline-block;
+    line-height: 1;
+    transition: all .3s;
+}
+
+.DataBalita #detailbalita #biobalita{
+    display: flex;
+    flex-direction: column;
+    color: #192a56;
+}
+
+.DataBalita #detailbalita #biobalita table{
+    margin-left: 10%;
+    
+}
+
+.DataBalita #detailbalita #biobalita h1{
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 3%;
+    font-size: 50px;
+}
+
+.DataBalita #detailbalita #biobalita th{
+    text-align: left;
+    margin-bottom: 3%;
+}
+
+/*.DataBalita #detailbalita #biobalita1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.DataBalita #detailbalita #biobalita1 table{
+    font-size: 20px;
+    text-align: justify;
+    color: #192a56;
+    max-width: 50%;
+    margin-left: 29%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+}*/
+
+.DataBalita #detailbalita canvas{
+    padding: 2%;
+}
+
+.DataBalita #detailbalita #status_balita{
+    padding-left: 2%;
+}
+
+
+/* Style the tab */
+.DataBalita .tab {
+    overflow: hidden;
+    border: 1px solid #E4F8F7;
+    background-color: #188C88;
+    margin-top: 5%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  /* Style the buttons inside the tab */
+  .DataBalita .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 15px;
+    border-radius: 10px;
+    margin: 1%;
+    color: #FFF;
+  }
+  
+  /* Change background color of buttons on hover */
+  .DataBalita .tab button:hover {
+    background-color: #A5D8D6;
+  }
+  
+  /* Create an active/current tablink class */
+  .DataBalita .tab button.active {
+    background-color: #E4F8F7;
+    color: #000;
+    border-radius: 10px;
+    margin: 1%;
+  }
+  
+  /* Style the tab content */
+  .DataBalita .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #E4F8F7;
+  }
+
+  /* Table Sort*/
+.DataBalita .table-sortable{
+    width: 100%;
+  }
+  
+  .DataBalita .table-sortable th {
+      cursor: pointer;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .DataBalita .table-sortable td {
+      cursor: pointer;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .DataBalita .table-sortable td img{
+    height: 20px;
+    width: 20px;
+    margin-top: 5px;
+  }
+  
+  .DataBalita .table-sortable .th-sort-asc::after {
+      content: "\25b4";
+  }
+  
+  .DataBalita .table-sortable .th-sort-desc::after {
+      content: "\25be";
+  }
+  
+  .DataBalita .table-sortable .th-sort-asc::after,
+  .DataBalita .table-sortable .th-sort-desc::after {
+      margin-left: 5px;
+  }
+  
+  .DataBalita .table-sortable .th-sort-asc,
+  .DataBalita .table-sortable .th-sort-desc {
+      background: rgba(0, 0, 0, 0.1);
+  }
+  
+  .DataBalita .table-sortable {
+      border-collapse: collapse;
+      margin: 25px 0;
+      font-size: 0.9em;
+      font-family: sans-serif;
+      min-width: 400px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+      text-align: center;
+  }
+  
+  .DataBalita .table-sortable thead tr {
+      background-color: #009879;
+      color: #ffffff;
+      text-align: left;
+  }
+  
+  .DataBalita .table-sortable th,
+  .DataBalita .table-sortable td {
+      padding: 12px 15px;
+  }
+  
+  .DataBalita .table-sortable tbody tr {
+      border-bottom: 1px solid #dddddd;
+  }
+  
+  .DataBalita .table-sortable tbody tr:nth-of-type(even) {
+      background-color: #f3f3f3;
+  }
+  
+  .DataBalita .table-sortable tbody tr:last-of-type {
+      border-bottom: 2px solid #009879;
+  }
+  
+  .DataBalita .styled-table tbody tr.active-row {
+      font-weight: bold;
+      color: #009879;
+  }
+
+
+/* Footer Section Style */
+.footer{
+    background: #D9F4F3;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap:1.5rem;
+}
+
+.footer .box-container .box h3{
+    padding:.5rem 0;
+    font-size: 2.5rem;
+    color:var(--black);
+}
+
+.footer .box-container .box a{
+    display: block;
+    padding:.5rem 0;
+    font-size: 1.5rem;
+    color:var(--light-color);
+}
+
+.footer .box-container .box a:hover{
+    color:var(--green);
+    text-decoration: underline;
+}
+
+.footer .credit{
+    text-align: center;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    font-size: 2rem;
+    color:var(--black);
+    padding:.5rem;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer .credit span{
+    color:var(--green);
+}
+
+.footer .tengah .kolom .deskripsi{
+    padding: 1rem;
+}
+
+.footer .support .logotelkom{
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 10rem;
+    justify-content: center;
+}
+
+#popup:target{
+    color: var(--black);
+    opacity: 1; 
+    visibility: visible;
+}
+
+/* Loader Section Style */
+.loader-container{
+    position: fixed;
+    top:0; left:0;
+    height:100%; 
+    width:100%;
+    z-index: 10000;
+    background: #D9F4F3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.loader-container img{
+    width:15rem;
+}
+
+.loader-container.fade-out{
+    top:-110%;
+    opacity:0;
+}
+
+
+/* responsive */
+
+@media (max-width:991px){
+
+    html{
+        font-size: 55%;
+    }
+    
+    nav{
+        padding:1rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+        padding-top: 10%;
+        padding-bottom: 8rem;
+    }
+
+}
+
+@media (max-width:768px){
+    
+    html{
+        font-size: 55%;
+    }
+    
+    nav{
+        padding:1rem 2rem;
+    }
+
+    section{
+        padding:2rem;
+        padding-bottom: 8rem;
+        padding-top: 10%;
+    }
+
+}
+
+@media (max-width:630px){
+
+    .DataBalita .popup {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -9%;
+        visibility: hidden;
+    }
+    
+    .DataBalita .popup .popup_header{
+        text-align: center;
+        margin: 1rem;
+        padding: 1rem;
+        width: 300px;
+        height: 190px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .DataBalita .popup .popup_header h1{
+        margin-top: 1.5rem;
+        padding: 3rem;
+        font-size: 2.5rem;
+    }
+
+    html{
+        font-size: 50%;
+    }
+    
+    section{
+        padding:2rem;
+        padding-bottom: 8rem;
+        padding-top: 30%;
+    }
+    
+    nav {
+        align-items: center;
+        padding: 10%;
+        
+    }
+
+    nav .logo {
+        width: 50%;
+        position: absolute;
+        left: 0px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 20%;
+        left: 0%;
+        width: 100%;
+        background: #188C88;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom-right-radius: 31px;
+        border-bottom-left-radius: 31px;
+    }
+
+    nav li {
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+
+    nav a {
+        width: 100%;
+        display: block;
+    }
+
+    nav li:hover {
+        background: rgba(172, 255, 214, 0.452);
+    }
+
+    label {
+        display: block;
+        padding: 0px 10px;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 2%;
+    }
+
+    label:hover {
+        color: #D9F4F3;
+    }
+
+    nav #nav-button:checked~ul {
+        max-height: 100%;
+        transition: all 1s ease-out;
+    }
+
+    nav .logo{
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: bolder;
+        padding-left: 10%;
+    }
+
+}
+
+@media (max-width:500px){
+
+    .DataBalita .popup {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -9%;
+        visibility: hidden;
+    }
+    
+    .DataBalita .popup .popup_header{
+        text-align: center;
+        margin: 1rem;
+        padding: 1rem;
+        width: 300px;
+        height: 190px;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .DataBalita .popup .popup_header h1{
+        margin-top: 1.5rem;
+        padding: 3rem;
+        font-size: 2.5rem;
+    }
+
+    html{
+        font-size: 50%;
+    }
+    
+    section{
+        padding:2rem;
+        padding-bottom: 8rem;
+        padding-top: 30%;
+    }
+    
+    nav {
+        align-items: center;
+        padding: 10%;
+        
+    }
+
+    nav .logo {
+        width: 50%;
+        position: absolute;
+        left: 0px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 15%;
+        left: 0%;
+        width: 100%;
+        background: #188C88;
+        max-height: 0;
+        overflow: hidden;
+        border-bottom-right-radius: 31px;
+        border-bottom-left-radius: 31px;
+    }
+
+    nav li {
+        display: block;
+        width: 100%;
+        padding: 5px;
+    }
+
+    nav a {
+        width: 100%;
+        display: block;
+    }
+
+    nav li:hover {
+        background: rgba(172, 255, 214, 0.452);
+    }
+
+    label {
+        display: block;
+        padding: 0px 10px;
+        font-size: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 2%;
+    }
+
+    label:hover {
+        color: #D9F4F3;
+    }
+
+    nav #nav-button:checked~ul {
+        max-height: 100%;
+        transition: all 1s ease-out;
+    }
+
+    nav .logo{
+        color: #fff;
+        font-size: 2.5rem;
+        font-weight: bolder;
+        padding-left: 10%;
+    }
+
+}
